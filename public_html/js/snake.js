@@ -194,8 +194,13 @@ function checkFoodCollisions(snakeHeadX, snakeHeadY) {
         snake.push({
             x: 0,
             y: 0
-        });
+            });
         snakeLength++;
+        var randomX = Math.floor(Math.random() * screenWidth);
+        var randomY = Math.floor(Math.random() * screenHeight);
+
+        food.x = Math.floor(randomX / snakeSize);
+        food.y = Math.floor(randomY / snakeSize);
     }
 }
 
@@ -249,6 +254,7 @@ function showMenu(state) {
         displayMenu(playHUD);
     }
 }
+
 
 function centerMenuPosition(menu) {
     menu.style.top = (screenHeight / 2) - (menu.offsetHeight / 2) + "px";
